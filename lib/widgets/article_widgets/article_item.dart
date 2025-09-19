@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:news/model/article.dart';
 
 import '../../styles.dart';
 import '../expandable_text.dart';
 class ArticleItem extends StatelessWidget {
-  const ArticleItem({super.key});
+  const ArticleItem({super.key,required this.article});
+  final Article article;
 
   @override
   Widget build(BuildContext context) {
@@ -22,18 +24,15 @@ class ArticleItem extends StatelessWidget {
 
               child: Image.network(
                 fit: BoxFit.fill,
-                "https://images.pexels.com/photos/6610260/pexels-photo-6610260.jpeg",
+                article.urlToImage??"https://images.pexels.com/photos/6610260/pexels-photo-6610260.jpeg",
                 width: double.infinity,height:200 ,)),
           ExpandableText(
-            text: "titletitletitletitletitletitle titletitle title titletitle titletitletitletitletitletitle titletitle title titletitle titletitletitletitletitletitle titletitle title titletitle titletitletitletitletitletitle titletitle title titletitle titletitletitletitletitletitle titletitle title titletitle ",
+            text:article.title,
           ),
 
-          Text(
-              maxLines: 1,
-              overflow:TextOverflow.ellipsis,
-              "titletitletitletitletitletitle titletitle title titletitle ",style: AppStyles.textStyle30.copyWith(
-            color: Colors.grey,
-          )),
+
+             ExpandableText(text:article.description ??"No Description" ,)
+
 
         ],
       ),

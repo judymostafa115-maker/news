@@ -12,7 +12,7 @@ class CategoryItem extends StatelessWidget {
     return  Padding(
       padding: const EdgeInsets.symmetric(horizontal: 8.0),
       child: CircleAvatar(
-        radius: 40,
+        radius: 60,
         backgroundImage: NetworkImage(x.image),
         child: Text(x.name,style: AppStyles.textStyle30,),
       ),
