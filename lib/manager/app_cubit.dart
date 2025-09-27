@@ -15,9 +15,9 @@ class AppCubit extends Cubit<AppState>{
     try{
       x =await apiServices.getNews(category:category);
       emit(SuccessState(articles: x));
-      emit(CategoryChangedState(category));
+      //emit(CategoryChangedState(category));
     }catch(e){
-      print(e.toString());
+
       emit(ErrorState(errorMessage: e.toString()));
     }
   }

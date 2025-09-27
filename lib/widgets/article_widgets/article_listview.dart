@@ -14,11 +14,13 @@ class ArticleListview extends StatelessWidget {
   Widget build(BuildContext context) {
     return     BlocBuilder<AppCubit,AppState>(builder: (context,AppState state){
       if(state is SuccessState){
-        return SliverList.builder(
-
-            itemBuilder: (context,index){
+        return   SliverList(
+          delegate: SliverChildBuilderDelegate(
+                (context, index) {
               return ArticleItem(article: state.articles[index]);
-            },itemCount:state.articles.length
+            },
+            childCount: state.articles.length,
+          ),
         );
       }
       else if(state is ErrorState){

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news/model/article.dart';
+import 'package:shimmer/shimmer.dart';
 
 import '../../styles.dart';
 import '../expandable_text.dart';
@@ -37,5 +38,6 @@ class ArticleItem extends StatelessWidget {
         ],
       ),
     );
+
   }
 }
